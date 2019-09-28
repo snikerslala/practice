@@ -1,62 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoItem from './TodoItem';
 import todosData from './todosData';
 import Loader from '../Loader';
+import './TodoItemList.css';
 
-class TodoItemList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isLoading: false,
-      todos: []
-    };
-    this.handleTodoChange = this.handleTodoChange.bind(this);
-  }
+const TodoItemList = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [todos, setTodos] = useState([]);
 
-  componentDidMount() {
-    this.setState({ isLoading: true });
-    this.setState({ todos: todosData });
-    this.setState({ isLoading: false });
-  }
+  useEffect(() => {
+    setIsLoading(true);
+    setTodos(todosData);
+    setIsLoading(false);
+  }, []);
 
-  handleTodoChange(id) {
-    this.setState(prevState => {
-      const updatedTodos = prevState.todos.map(item => {
-        if (item.id === id) {
-          item.done = !item.done;
-        }
-        return item;
-      });
-      return { todos: updatedTodos };
+  const handleTodoChange = id => {
+    const updatedTodos = todos.map(item => {
+      if (item.id === id) {
+        item.done = !item.done;
+      }
+      return item;
     });
-  }
 
-  render() {
-    const TodoItems = this.state.todos.map(item => (
-      <TodoItem
-        key={item.id}
-        item={item}
-        handleChange={this.handleTodoChange}
-      />
-    ));
+    setTodos(updatedTodos);
+  };
 
-    return (
-      <main role="main" className="App-main">
-        <h1>This is a simple TodoList</h1>
-        <div
-          style={{
-            width: '300px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            border: '1px solid white',
-            padding: '3px'
-          }}
-        >
-          {this.state.isLoading ? <Loader /> : TodoItems}
-        </div>
-      </main>
-    );
-  }
-}
+  const TodoItems = todos.map(item => (
+    <TodoItem key={item.id} item={item} handleChange={handleTodoChange} />
+  ));
+
+  return (
+    <main role="main" className="App-main">
+      <h1>This is a simple TodoList</h1>
+      <div className="Todo-list">{isLoading ? <Loader /> : TodoItems}</div>
+    </main>
+  );
+};
 
 export default TodoItemList;
