@@ -1,0 +1,13 @@
+.form h1 {
+  width: 300px;
+  margin: 20px auto;
+  font-size: 24px;
+  background-color: aqua;
+}
+
+@media screen and (min-width: 410px) {
+  .form h1 {
+    width: 400px;
+    font-size: 32px;
+  }
+}

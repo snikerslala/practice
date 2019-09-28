@@ -30,7 +30,7 @@ const TodoItemList = () => {
   ));
 
   return (
-    <main role="main" className="App-main">
+    <main role="main" className="App-main todo">
       <h1>This is a simple TodoList</h1>
       <div className="Todo-list">{isLoading ? <Loader /> : TodoItems}</div>
     </main>

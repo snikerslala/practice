@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TodoItemList from './TodoList/TodoItemList';
+import Form from './Form/Form';
 
-class Main extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <main role="main" className="App-main">
-        <TodoItemList />
-      </main>
-    );
-  }
-}
+const Main = ({ content }) => {
+  return (
+    <main role="main" className="App-main">
+      {content === 'todo' ? <TodoItemList /> : <Form />}
+    </main>
+  );
+};
 
 export default Main;

@@ -17,6 +17,16 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-header nav {
+  font-size: calc(10px + 1vmin);
+  display: flex;
+  flex-wrap: wrap;
+}
+.App-header p {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid burlywood;
+}
 
 .App-footer {
   background-color: #282c34;

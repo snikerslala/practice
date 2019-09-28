@@ -1,9 +1,9 @@
-h1 {
+.todo h1 {
   width: 300px;
-  margin: auto;
+  margin: 20px auto;
+  font-size: 24px;
   border: 1px solid white;
   background-color: rgb(245, 203, 148);
-  font-size: 24px;
 }
 .Todo-list {
   width: 250px;
@@ -14,7 +14,7 @@ h1 {
   background-color: rgb(245, 203, 148);
   font-size: 14px;
 }
-label:hover {
+.todo label:hover {
   cursor: pointer;
 }
 .Todo-done {
@@ -23,7 +23,7 @@ label:hover {
 }
 
 @media screen and (min-width: 410px) {
-  h1 {
+  .todo h1 {
     width: 400px;
     font-size: 32px;
   }
