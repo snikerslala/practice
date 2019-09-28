@@ -25,8 +25,7 @@ label:hover {
 @media screen and (min-width: 410px) {
   h1 {
     width: 400px;
-    /* font-size: calc(18px + 2vmin); */
-    font-size: calc(18px + 2vmin);
+    font-size: 32px;
   }
   .Todo-list {
     width: 350px;
