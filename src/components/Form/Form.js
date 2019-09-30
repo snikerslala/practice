@@ -8,11 +8,18 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [gender, setGender] = useState('');
   const [country, setCountry] = useState('');
+  const [funny, setFunny] = useState(false);
+  const [joke, setJoke] = useState('');
+
+  const handleSubmit = e => {
+    console.log('submitted');
+    e.preventDefault();
+  };
 
   return (
     <div className="form">
       <h1>This is a sample Form</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           First name: &nbsp;
           <input
@@ -21,6 +28,7 @@ const Form = () => {
             value={firstName}
             onChange={e => setFirstName(e.target.value)}
             placeholder="First name"
+            required
           />
         </label>
         <label>
@@ -35,8 +43,29 @@ const Form = () => {
         </label>
         <GenderRadio gender={gender} handleChange={setGender} />
         <Countries country={country} handleChange={setCountry} />
+        <label>
+          <input
+            type="checkbox"
+            name="funny"
+            checked={funny}
+            onChange={e => setFunny(e.target.checked)}
+          />
+          Are you funny?
+        </label>
+        {!funny ? null : (
+          <label>
+            As you said, you're funny. So tell us a joke and let us laugh!
+            <textarea
+              name="joke"
+              value={joke}
+              onChange={e => setJoke(e.target.value)}
+              placeholder="Your joke :) "
+            />
+          </label>
+        )}
+        <button>Submit</button>
       </form>
-      <p>{country}</p>
+      <p>{joke}</p>
     </div>
   );
 };
