@@ -11,8 +11,19 @@ const Form = () => {
   const [funny, setFunny] = useState(false);
   const [joke, setJoke] = useState('');
 
+  const resetForm = e => {
+    setFirstName('');
+    setEmail('');
+    setGender('');
+    setCountry('');
+    setFunny(false);
+    setJoke('');
+    e.preventDefault();
+  };
+
   const handleSubmit = e => {
     console.log('submitted');
+    resetForm(e);
     e.preventDefault();
   };
 
@@ -64,6 +75,7 @@ const Form = () => {
           </label>
         )}
         <button>Submit</button>
+        <button onClick={resetForm}>Reset</button>
       </form>
       <p>{joke}</p>
     </div>
