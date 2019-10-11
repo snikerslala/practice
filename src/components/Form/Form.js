@@ -28,36 +28,36 @@ const Form = () => {
   };
 
   return (
-    <div className="form">
+    <div className='form'>
       <h1>This is a sample Form</h1>
       <form onSubmit={handleSubmit}>
         <label>
           First name: &nbsp;
           <input
-            type="text"
-            name="firstName"
+            type='text'
+            name='firstName'
             value={firstName}
             onChange={e => setFirstName(e.target.value)}
-            placeholder="First name"
+            placeholder='First name'
             required
           />
         </label>
         <label>
           Email: &nbsp;
           <input
-            type="text"
-            name="email"
+            type='text'
+            name='email'
             value={email}
             onChange={e => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder='Email'
           />
         </label>
         <GenderRadio gender={gender} handleChange={setGender} />
         <Countries country={country} handleChange={setCountry} />
         <label>
           <input
-            type="checkbox"
-            name="funny"
+            type='checkbox'
+            name='funny'
             checked={funny}
             onChange={e => setFunny(e.target.checked)}
           />
@@ -67,10 +67,10 @@ const Form = () => {
           <label>
             As you said, you're funny. So tell us a joke and let us laugh!
             <textarea
-              name="joke"
+              name='joke'
               value={joke}
               onChange={e => setJoke(e.target.value)}
-              placeholder="Your joke :) "
+              placeholder='Your joke :) '
             />
           </label>
         )}
