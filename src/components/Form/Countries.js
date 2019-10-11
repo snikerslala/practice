@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
+const CountrySelect = styled.select`
+  width: 270px;
+`;
 
 const Countries = ({ country, handleChange }) => {
   const [allCountries, setAllCountries] = useState([]);
@@ -31,11 +36,15 @@ const Countries = ({ country, handleChange }) => {
 
   return (
     <label>
-      Country &nbsp;
-      <select name="country" value={country} onChange={handleCountryChange}>
-        <option value="">-- Choose the country --</option>
+      Country: &nbsp;
+      <CountrySelect
+        name='country'
+        value={country}
+        onChange={handleCountryChange}
+      >
+        <option value=''>-- Choose the country --</option>
         {countryOptions}
-      </select>
+      </CountrySelect>
     </label>
   );
 };

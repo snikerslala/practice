@@ -4,14 +4,14 @@ const GenderRadio = ({ gender, handleChange }) => {
   const genderTypes = ['male', 'female', 'other'];
 
   const genderRadioInputs = genderTypes.map((genType, index) => (
-    <label className="inline-block" key={index}>
+    <label key={index}>
       <input
-        type="radio"
+        type='radio'
         name={genType}
         value={gender}
         checked={gender === genType}
         onChange={() => handleChange(genType)}
-      />{' '}
+      />
       {genType}
     </label>
   ));
