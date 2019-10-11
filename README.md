@@ -20,4 +20,5 @@
 <ul>
   <li>React (mostly with Hooks)</li>
   <li>JavaScript</li>
+  <li>Styled-Components</li>
 </ul>
