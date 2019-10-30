@@ -5,9 +5,9 @@ function TodoItem(props) {
 
   return (
     <>
-      <label className={done && 'Todo-done'}>
+      <label className={done ? 'Todo-done' : null}>
         <input
-          type="checkbox"
+          type='checkbox'
           id={id}
           checked={done}
           onChange={() => props.handleChange(id)}
