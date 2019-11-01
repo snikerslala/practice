@@ -11,9 +11,10 @@
 
 <h1>Included Features/Projects</h1>
 <ul>
-  <li>Switch between projects</li>
-  <li>Basic Form</li>
-  <li>Todo list</li>
+  <li><strong>Switch between projects:</strong></li>
+  <li><strong>Basic Form</strong> - React, Styled-Components, JavaScript, REST Countries API</li>
+  <li><strong>Todo list</strong> - React, JavaScript, CSS3</li>
+  <li><strong>Balls</strong> - CSS3</li>
 </ul>
 
 <h1>Tech stack:</h1>
@@ -21,4 +22,5 @@
   <li>React (mostly with Hooks)</li>
   <li>JavaScript</li>
   <li>Styled-Components</li>
+  <li>CSS3</li>
 </ul>
